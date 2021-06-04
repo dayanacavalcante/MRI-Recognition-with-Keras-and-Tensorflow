@@ -1,8 +1,8 @@
-# RMI Recognition with Keras and Tensorflow
+# MRI Recognition with Keras and Tensorflow
 
 Build a CNN using Keras + Tensorflow to predict the rating of an RMI into Mild Demented, Moderate Demented, Non Demented or Very Mild Demented.
 
-![](/MRI-Classification-Tensorflow-Keras/mildDem0.jpg)
+![](/mildDem0.jpg)
 
 * Tensorflow and Keras
 
