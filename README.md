@@ -197,13 +197,10 @@ Score [[0. 0. 0. 1.]]
 Label: 3
 ```
 
-## *_Model Evaluation_*
+## *_Data Augmentation_*
 
-In this first step of the project, the accuracy with the test set (50%) is slightly less than the training (59%) accuracy. This difference between the two accuracies represents an overfitting. Overfitting is a machine learning model that performed worse on a set of new, and previously unused, inputs than using the training set.
+In this first step I didn't use Image Augmentation. The next step will be to verify the impact caused using Image Augmentation.
 
-```
-1/1 [==============================] - 6s 6s/step - loss: 1.0566 - accuracy: 0.5020
-```
 
 ## *_Data_*
 
