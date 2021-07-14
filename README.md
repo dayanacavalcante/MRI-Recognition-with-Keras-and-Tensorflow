@@ -180,11 +180,11 @@ Epoch 00006: early stopping
 
 In the first step I didn't use Image Augmentation. The accuracy on the training set was 57.75%. But on the validation set it’s much smaller at 13% and on the Plot chart the loss drastically increasing on the validation set. So that’s clearly showing overfitting.
 
-![](Plot_training_validation.png)
+![](Plot_training_validation.jpg)
 
 Using image augmentation, now the accuracy on the training and the validation set are very close to each other, except epoch 10. On the Plot chart we can see the accuracy curves are fit near and the loss are fit together.
 
-![](Plot_training_validation_image_augmentation.png)
+![](Plot_training_validation_image_augmentation.jpg)
 
 ## *_Predictions_*
 
