@@ -145,41 +145,46 @@ In Keras, you can add _callbacks_ that are called during training.
 
 In this case, I added two: _EarlyStop_ (stops training if the wall network learns) and _ModelCheckPoint_ (saves the model that has the best loss during training). At _EarlyStop_ you have to wait 5 epochs if it doesn't decrease for 5 epochs then stop.
 
-I determined 50 epochs for training but the model only trained for 6 epochs, because of _EarlyStop_. The saved model was from epoch 1.
+I determined 50 epochs for training but the model only trained for 6 epochs, because of _EarlyStop_. 
 
 ```
 Epoch 1/50
-2/2 [==============================] - 2s 1s/step - loss: 0.7953 - accuracy: 0.5300 - val_loss: 2.3316 - val_accuracy: 0.0000e+00
+71/71 [==============================] - 52s 733ms/step - loss: 1.0380 - accuracy: 0.5091 - val_loss: 1.1420 - val_accuracy: 0.2647
 
-Epoch 00001: val_loss improved from inf to 2.33158, saving model to C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential_1
-INFO:tensorflow:Assets written to: C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential_1\assets
+Epoch 00001: val_loss improved from inf to 1.14198, saving model to C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential
+INFO:tensorflow:Assets written to: C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential\assets
 Epoch 2/50
-2/2 [==============================] - 2s 1s/step - loss: 0.8707 - accuracy: 0.5600 - val_loss: 2.1405 - val_accuracy: 0.0800
+71/71 [==============================] - 54s 758ms/step - loss: 0.9911 - accuracy: 0.5272 - val_loss: 1.4124 - val_accuracy: 0.2013
 
-Epoch 00002: val_loss improved from 2.33158 to 2.14051, saving model to C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential_1
-INFO:tensorflow:Assets written to: C:\Users\RenanSardinha\Documents\Data Science\Projects\MRI-Classification-Tensorflow-Keras\sequential_1\assets
+Epoch 00002: val_loss did not improve from 1.14198
 Epoch 3/50
-2/2 [==============================] - 2s 1s/step - loss: 0.8371 - accuracy: 0.5700 - val_loss: 2.1681 - val_accuracy: 0.1600
+71/71 [==============================] - 53s 742ms/step - loss: 0.9744 - accuracy: 0.5358 - val_loss: 1.6457 - val_accuracy: 0.1787
 
-Epoch 00003: val_loss did not improve from 2.14051
+Epoch 00003: val_loss did not improve from 1.14198
 Epoch 4/50
-2/2 [==============================] - 2s 969ms/step - loss: 0.8653 - accuracy: 0.6100 - val_loss: 2.5483 - val_accuracy: 0.1000
+71/71 [==============================] - 53s 749ms/step - loss: 0.9010 - accuracy: 0.5752 - val_loss: 2.2713 - val_accuracy: 0.1240
 
-Epoch 00004: val_loss did not improve from 2.14051
+Epoch 00004: val_loss did not improve from 1.14198
 Epoch 5/50
-2/2 [==============================] - 2s 1s/step - loss: 0.7230 - accuracy: 0.6400 - val_loss: 2.3297 - val_accuracy: 0.0800
+71/71 [==============================] - 56s 788ms/step - loss: 0.8866 - accuracy: 0.5937 - val_loss: 2.1952 - val_accuracy: 0.1780
 
-Epoch 00005: val_loss did not improve from 2.14051
+Epoch 00005: val_loss did not improve from 1.14198
 Epoch 6/50
-2/2 [==============================] - 2s 965ms/step - loss: 0.7039 - accuracy: 0.7000 - val_loss: 2.2679 - val_accuracy: 0.1400
+71/71 [==============================] - 56s 785ms/step - loss: 0.8784 - accuracy: 0.5775 - val_loss: 2.8427 - val_accuracy: 0.1300
 
-Epoch 00006: val_loss did not improve from 2.14051
-Epoch 7/50
-2/2 [==============================] - 2s 994ms/step - loss: 0.9363 - accuracy: 0.5900 - val_loss: 2.5189 - val_accuracy: 0.1000
-
-Epoch 00007: val_loss did not improve from 2.14051
-Epoch 00007: early stopping
+Epoch 00006: val_loss did not improve from 1.14198
+Epoch 00006: early stopping
 ```
+
+## *_Image Augmentation_*
+
+In the first step I didn't use Image Augmentation. The accuracy on the training set was 57.75%. But on the validation set it’s much smaller at 13% and on the Plot chart the loss drastically increasing on the validation set. So that’s clearly showing overfitting.
+
+![](Plot_training_validation.png)
+
+Using image augmentation, now the accuracy on the training and the validation set are very close to each other, except epoch 10. On the Plot chart we can see the accuracy curves are fit near and the loss are fit together.
+
+![](Plot_training_validation_image_augmentation.png)
 
 ## *_Predictions_*
 
@@ -196,11 +201,6 @@ Result:
 Score [[0. 0. 0. 1.]]
 Label: 3
 ```
-
-## *_Data Augmentation_*
-
-In this first step I didn't use Image Augmentation. The next step will be to verify the impact caused using Image Augmentation.
-
 
 ## *_Data_*
 
