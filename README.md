@@ -182,7 +182,7 @@ In the first step I didn't use Image Augmentation. The accuracy on the training 
 
 ![](Plot_training_validation.jpg)
 
-Using image augmentation, now the accuracy on the training and the validation set are very close to each other, except epoch 10. On the Plot chart we can see the accuracy curves are fit near and the loss are fit together.
+Using image augmentation, the accuracy on the training (47.86%) and the validation (49.93%) set are now close to each other. On the Plot chart we can see the accuracy curves are fit near, except at epochs 0 and 10, and the loss are fit together, except at epoch 0.
 
 ![](Plot_training_validation_image_augmentation.jpg)
 
